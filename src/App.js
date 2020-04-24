@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import InputBox from './components/input-box/inputbox.component';
+import CardList from './components/card-list/card-list.components';
+
+
+
+class App extends React.Component {
+  state={
+    cuisine: 'all',
+    rank: 'asc'
+  }
+
+  handleChange = (e)=>{
+    // console.log(this.state)
+    e.preventDefault();
+     const {name, value} = e.target;
+     console.log(name, value);
+    this.setState({[name]: value})
+  }
+
+  render(){
+    return (
+      <div>
+        <InputBox selectedCuisine={this.state.cuisine} rank={this.state.rank} handleChange={this.handleChange}/> 
+        <CardList cuisine={this.state.cuisine} rank={this.state.rank}/>     
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,0 +1,22 @@
+.cuisine-card{
+    min-height: 470px;
+    padding: 9px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cuisine-card:hover{
+    box-shadow: 10px 6px 47px 0px rgba(0,0,0,0.75);;
+}
+.city{
+    font-weight: 600;
+}
+.name{
+    font-size: 19px;
+}
+.card-bottom{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20%;
+}
